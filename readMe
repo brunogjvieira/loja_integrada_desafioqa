@@ -30,15 +30,17 @@ Os testes foram escritos em **inglês**, pois, dado que envolvem código, acredi
 
 Siga o passo a passo abaixo para rodar a automação:
 
-1. Estou usando o vscode.
-2. Baixe o node.js(estou usando a versão 20.15.1)
-3. Execute `npm install`.
-4. Execute `npx cypress open`.
-5. Isso abrirá o Cypress. Clique em **E2E Testing**.
-6. Selecione o navegador para realizar o teste (usei o **Chrome**).
-7. Após isso, clique no único arquivo de teste chamado `CartPage.cy.js`.
-8. Isso irá rodar todos os testes automatizados. Caso queira rodar um teste específico, adicione `.only` no `it` do teste.
-9. O Cypress roda muito rapidamente, então pode ser necessário acompanhar o processo passo a passo.
+1. Utilize vscode.
+2. Baixe e instale node.js https://nodejs.org/pt/blog/release/v20.15.1 (versão 20.15.1)
+3. Faça o download do projeto que foi enviado no Email ou se preferir no github: https://github.com/brunogjvieira/loja_integrada_desafioqa. 
+4. Abra o vscode no diretorio do projeto.
+5. Execute no terminal do vscode `npm install`.
+6. Execute no terminal do vscode `npx cypress open`.
+7. Isso abrirá o Cypress. Clique em **E2E Testing**.
+8. Selecione o navegador para realizar o teste (foi utilizado o **Chrome**).
+9. Após isso, clique no único arquivo de teste chamado `CartPage.cy.js`.
+10. Isso irá rodar todos os testes automatizados. Caso queira rodar um teste específico, adicione `.only` no `it` do teste.
+11. O Cypress roda muito rapidamente, então pode ser necessário acompanhar o processo passo a passo.
 
 # Agradecimentos
 
