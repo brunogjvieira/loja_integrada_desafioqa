@@ -1,0 +1,113 @@
+Objetivo do Documento
+Este documento tem como objetivo descrever os casos de teste para a nova feature de cupons de desconto no carrinho de compras.
+
+O carrinho de compras é um componente essencial para o funcionamento de um Ecommerce, permitindo que os clientes selecionem e adicionem produtos para finalizar suas compras. A implementação de cupons de desconto busca aumentar a taxa de conversão, permitindo que os clientes obtenham benefícios nos preços dos produtos. Essa funcionalidade, apesar de adicional, é crítica, pois erros em sua aplicação podem gerar prejuízos financeiros e reclamações dos clientes.
+
+Cenários de testes mapeados:
+
+Cenário 1: Criar uma conta no Ecommerce.
+  - Objetivo: Verificar se é possível a criação de conta do cliente.
+  - Passos do Teste:
+      1. Dado que o usuário acessa a URL de criação de conta: "https://qastoredesafio.lojaintegrada.com.br/conta/login".
+      2. Quando o usuário insere um novo email no campo "Ainda não possuo cadastro".
+      3. E é redirecionado para uma nova página de criação de conta.
+      4. E preencher os campos obrigatórios.
+      5. E clica no botão "Criar Conta".
+      6. Então o sistema deve exibir a mensagem "Cliente criado com sucesso".
+
+Cenário 2: Adicionar um produto ao carrinho com o cliente logado.
+  - Objetivo: Verificar se é possível adicionar um produto no carrinho.
+  - Passos do Teste:
+      1. Dado que o cliente está logado.
+      2. E acessa a URL: "https://qastoredesafio.lojaintegrada.com.br/categoria/15610609.html" 
+      3. Quando o cliente passa o mouse sobre o produto "[CODIGO]Produto com MPN preenchido".
+      4. E clica no ícone de carrinho.
+      5. Então deve ser exibido um pop-up indicando que o produto foi adicionado ao carrinho
+      6. E o ícone do carrinho deve mostrar um produto adicionado.
+
+Cenário 3: Adicionar o cupom FRETEGRATIS no produto adicionado ao carrinho.
+  - Objetivo: Verificar se o cupom FRETEGRATIS vai ser adicionado corretamente.
+  - Passos do teste:
+      1. Dado que o cliente está logado.
+      2. E com um produto adicionado ao carrinho.
+      3. Quando o cliente inserir o cupom FRETEGRATIS no campo de "Cupom de desconto".
+      4. E clicar em "Usar cupom"
+      5. Então o valor do frete deve ficar zero.
+      6. E ser mostrado que o cliente recebeu frete grátis.
+
+[SUGESTÃO]Cenário 4: Adicionar o cupom 10OFF no produto adicionado ao carrinho.
+  - Objetivo: Verificar se o cupom 10OFF vai ser adicionado corretamente.
+  - Passos do teste:
+      1. Dado que o cliente está logado.
+      2. E com um produto adicionado ao carrinho.
+      3. Quando o cliente inserir o cupom 10OFF no campo de "Cupom de desconto".
+      4. E clicar em "Usar cupom".
+      5. Então o valor do produto recebe 10% de desconto.
+      6. E ser mostrado para o cliente o preço do produto com o desconto, somado com o valor do frete.
+  
+Cenário 5: Adicionar o cupom 30REAIS no produto adicionado ao carrinho.
+  - Objetivo: Verificar se o cupom 30REAIS vai ser adicionado corretamente.
+  - Passos do teste:
+      1. Dado que o cliente está logado.
+      2. E com um produto adicionado ao carrinho.
+      3. Quando o cliente inserir o cupom 30REAIS no campo de "Cupom de desconto".
+      4. E clicar em "Usar cupom".
+      5. Então o valor do produto deve subtrair 30 reais.
+      6. E ser mostrado para o cliente o preço do produto com o desconto, somado com o valor do frete.
+
+[CENÁRIO COM ERRO] Cenário 6: Adicionar o cupom 20LIMITADO no produto adicionado ao carrinho.
+  - Objetivo: Verificar se o cupom 20LIMITADO vai ser adicionado corretamente.
+  - Passos do teste:
+      1. Dado que o cliente está logado.
+      2. E com um produto adicionado ao carrinho.
+      3. Quando o cliente inserir o cupom 20LIMITADO no campo de "Cupom de desconto".
+      4. E clicar em "Usar cupom".
+      5. Então o valor do produto deve subtrair 20 reais ou 20% de desconto ou retornar uma mensagem de "Uso excedido, por favor tente outro cupom"(requisito não ficou claro).
+      
+[CENÁRIO COM ERRO] Cenário 7: Adicionar o cupom AJJFLWBHH no produto adicionado ao carrinho.
+  - Objetivo: Verificar se o cupom AJJFLWBHH vai ser adicionado corretamente.
+  - Passos do teste:
+      1. Dado que o cliente está logado.
+      2. E com um produto adicionado ao carrinho.
+      3. Quando o cliente inserir o cupom AJJFLWBHH no campo de "Cupom de desconto".
+      4. E clicar em "Usar cupom".
+      5. Então o valor do pedido recebe 5% de desconto(incluindo o valor do frete).
+      6. E ser mostrado para o cliente o preço do pedido final com o desconto.
+
+[CENÁRIO COM ERRO] Cenário 8: Adicionar o cupom CUPOMVENCIDO no produto adicionado ao carrinho.
+  - Objetivo: Verificar se o cupom CUPOMVENCIDO vai retornar a mensagem de vencido.
+  - Passos do teste:
+      1. Dado que o cliente está logado.
+      2. E com um produto adicionado ao carrinho.
+      3. Quando o cliente inserir o cupom CUPOMVENCIDO no campo de "Cupom de desconto".
+      4. E clicar em "Usar cupom".
+      5. Então deve retornar uma mensagem de "Esse Cupom já excedeu o seu tempo de uso, insira outro" para o cliente.
+      6. E ser mostrado para o cliente o preço do produto sem alteração, somado com o valor do frete.
+
+Cenário 9: Adicionar os cupons com dois produtos iguais adicionado no carrinho.
+  - Objetivo: Verificar se os resultados serão iguais de somente um produto adicionado.
+  - Passos do teste:
+      1. Dado que o cliente está logado.
+      2. E com dois produtos iguais adicionado ao carrinho.
+      3. Quando o cliente inserir os cupons existentes nos outros cenários.
+      4. E clicar em "Usar cupom".
+      5. Então deve ter o resultado igual os outros cenários de somente um produto adicionado no carrinho.
+
+Cenário 10: Adicionar os cupons com dois produtos diferentes adicionado no carrinho.
+  - Objetivo: Verificar se os resultados serão iguais de somente um produto adicionado.
+  - Passos do teste:
+      1. Dado que o cliente está logado.
+      2. E com dois produtos diferentes adicionado ao carrinho.
+      3. Quando o cliente inserir os cupons existentes nos outros cenários.
+      4. E clicar em "Usar cupom".
+      5. Então deve ter o resultado igual os outros cenários de somente um produto adicionado no carrinho.
+
+Cenário 11: Adicionar os cupons com um produto no carrinho e depois adicionar outro produto no carrinho.
+  - Objetivo: Verificar se os cupons vão fazer o desconto no pop-up do carrinho.
+  - Passos do teste:
+      1. Dado que o cliente está logado.
+      2. E com um produto adicionado ao carrinho.
+      3. Quando o cliente inserir os cupons existentes nos outros cenários
+      4. E adicionar outro produto no carrinho.
+      5. E abrir o pop-up de produtos no carrinho.
+      6. Então o desconto deve está funcionando no pop-up do carrinho.
