@@ -2,8 +2,6 @@
 
 Os **cenários de teste** estão no arquivo `cenariosTestes.txt`.
 
-Normalmente, utilizo o **AzureDevOps** ou **Jira** para abrir bugs e escrever os cenários de teste. No entanto, para facilitar o processo, reuni tudo em um único arquivo.
-
 Os cenários de teste foram escritos em **BDD com Gherkin**, com o objetivo de facilitar o entendimento por qualquer pessoa, incluindo stakeholders, desenvolvedores, entre outros.
 
 O foco principal é a **funcionalidade de cupons no carrinho**. Portanto, os testes foram concentrados nessa funcionalidade e nas integrações com outras partes do processo, como:
@@ -14,11 +12,11 @@ O foco principal é a **funcionalidade de cupons no carrinho**. Portanto, os tes
 
 ## Automação
 
-Escolhi o **Cypress** por ter maior afinidade com a ferramenta. Tenho experiência em automatizar qualquer site com Cypress e também o utilizo para testes de back-end.
+Foi escolhido o **Cypress** de ferramenta de automação. Tenho experiência em automatizar qualquer site com Cypress e também o utilizo para testes de back-end.
 
-O objetivo dos testes automatizados é ser direto e objetivo. Ao invés de navegar no site para adicionar produtos ao carrinho e depois aplicar o cupom, prefiro realizar chamadas de **APIs**. Isso me permite ganhar tempo e reduzir o código, concentrando os testes no que realmente importa: a funcionalidade de cupons.
+O objetivo dos testes automatizados é ser direto e objetivo. Ao invés de navegar no site para adicionar produtos ao carrinho e depois aplicar o cupom, prefiro realizar chamadas de **APIs** até chegar na parte do carrinho para fazer a aplicação dos cupons. Isso me permite ganhar tempo e reduzir o código, concentrando os testes no que realmente importa: a funcionalidade de cupons.
 
-A automação foi dividida em três descrições (**Describe**):
+A automação foi dividida em três (**Describe**):
 
 - Página do Carrinho
 - Popup do Carrinho
@@ -40,7 +38,6 @@ Siga o passo a passo abaixo para rodar a automação:
 8. Selecione o navegador para realizar o teste (foi utilizado o **Chrome**).
 9. Após isso, clique no único arquivo de teste chamado `CartPage.cy.js`.
 10. Isso irá rodar todos os testes automatizados. Caso queira rodar um teste específico, adicione `.only` no `it` do teste.
-11. O Cypress roda muito rapidamente, então pode ser necessário acompanhar o processo passo a passo.
 
 # Agradecimentos
 
