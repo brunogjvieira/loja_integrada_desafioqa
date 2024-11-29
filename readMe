@@ -1,40 +1,43 @@
-Documentação:
-Os cenários de teste estão no arquivo cenariosTestes.txt.
+# Documentação
 
-Normalmente, utilizo o AzureDevOps ou Jira para abrir bugs e escrever os cenários de teste, mas, neste processo, coloquei tudo aqui em um só arquivo para facilitar.
+Os **cenários de teste** estão no arquivo `cenariosTestes.txt`.
 
-Os cenários de teste foram escritos em BDD com Gherkin, visando facilitar o entendimento de qualquer pessoa, como stakeholders, desenvolvedores, entre outros.
+Normalmente, utilizo o **AzureDevOps** ou **Jira** para abrir bugs e escrever os cenários de teste. No entanto, para facilitar o processo, reuni tudo em um único arquivo.
 
-Como o foco é a funcionalidade de cupons no carrinho, realizei apenas os testes dessa funcionalidade e as integrações com outras partes do processo, como adicionar produtos ao carrinho, testar cupons com o cliente logado e deslogado, até a parte de checkout.
+Os cenários de teste foram escritos em **BDD com Gherkin**, com o objetivo de facilitar o entendimento por qualquer pessoa, incluindo stakeholders, desenvolvedores, entre outros.
 
-Automação:
+O foco principal é a **funcionalidade de cupons no carrinho**. Portanto, os testes foram concentrados nessa funcionalidade e nas integrações com outras partes do processo, como:
 
-Escolhi o Cypress por ter mais afinidade com a ferramenta. Tenho capacidade de automatizar qualquer site com Cypress e também o utilizo para testes de back-end.
+- Adicionar produtos ao carrinho
+- Testar cupons com o cliente logado e deslogado
+- Testar até a parte de checkout
 
-Busco ir direto ao ponto nos testes automatizados. Ou seja, ao invés de entrar no site para adicionar o produto ao carrinho e depois adicionar o cupom, faço chamadas de APIs para ganhar tempo e reduzir o código, focando no que realmente importa nesta tarefa, que é a funcionalidade de cupons.
+## Automação
 
-A automação foi dividida em três descrições (Describe): Página do Carrinho, Popup do Carrinho e testes validando o payload da API do cupom.
+Escolhi o **Cypress** por ter maior afinidade com a ferramenta. Tenho experiência em automatizar qualquer site com Cypress e também o utilizo para testes de back-end.
 
-Os testes estão em inglês, pois, como envolvem código, acredito que a padronização em inglês seja essencial.
+O objetivo dos testes automatizados é ser direto e objetivo. Ao invés de navegar no site para adicionar produtos ao carrinho e depois aplicar o cupom, prefiro realizar chamadas de **APIs**. Isso me permite ganhar tempo e reduzir o código, concentrando os testes no que realmente importa: a funcionalidade de cupons.
 
-Como rodar o codigo de automação(Segue o passo a passo):
+A automação foi dividida em três descrições (**Describe**):
 
-"1 - Execute npm install."
+- Página do Carrinho
+- Popup do Carrinho
+- Testes validando o payload da API do cupom
 
-"2 - Execute npx cypress open."
+Os testes foram escritos em **inglês**, pois, dado que envolvem código, acredito que a padronização em inglês é essencial.
 
-"3 - Isso abrirá o Cypress; clique em 'E2E Testing'."
+## Como rodar o código de automação
 
-"4 - Selecione o navegador para realizar o teste(usei o Chrome)."
+Siga o passo a passo abaixo para rodar a automação:
 
-"5 - Após isso, clique no único arquivo de teste chamado 'CartPage.cy.js'."
+1. Execute `npm install`.
+2. Execute `npx cypress open`.
+3. Isso abrirá o Cypress. Clique em **E2E Testing**.
+4. Selecione o navegador para realizar o teste (usei o **Chrome**).
+5. Após isso, clique no único arquivo de teste chamado `CartPage.cy.js`.
+6. Isso irá rodar todos os testes automatizados. Caso queira rodar um teste específico, adicione `.only` no `it` do teste.
+7. O Cypress roda muito rapidamente, então pode ser necessário acompanhar o processo passo a passo.
 
-"6 - Isso irá rodar todos os testes automatizados. Caso queira rodar um teste específico, adicione .only no it do teste."
+# Agradecimentos
 
-"7 - O Cypress roda muito rapidamente, então talvez seja necessário acompanhar o processo passo a passo."
-
-
-Agradecimentos:
-
-Agradeço pela oportunidade de participar do desafio. Tenho grande interesse em fazer parte da equipe! Quaisquer dúvidas, estou à disposição para esclarecimentos. Aguardo o feedback!
-
+Agradeço pela oportunidade de participar do desafio. Tenho grande interesse em fazer parte da equipe. Quaisquer dúvidas, estou à disposição para esclarecimentos. Aguardo o feedback!
