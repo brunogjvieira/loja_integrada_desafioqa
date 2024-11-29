@@ -1,5 +1,5 @@
 Documentação:
-Os cenários de teste estão no arquivo cenariosTestes.txt.
+Os cenários de teste estão no arquivo cenariosTestes.txt ou se preferir em cenariosTestes.mk
 
 Normalmente, utilizo o AzureDevOps ou Jira para abrir bugs e escrever os cenários de teste, mas, neste processo, coloquei tudo aqui em um só arquivo para facilitar.
 
@@ -19,20 +19,23 @@ Os testes estão em inglês, pois, como envolvem código, acredito que a padroni
 
 Como rodar o codigo de automação(Segue o passo a passo):
 
-"1 - Execute npm install."
+"1 - Estou usando o vscode."
 
-"2 - Execute npx cypress open."
+"2 - Baixe o node https://nodejs.org/pt (estou usando a versão 20.15.1)
 
-"3 - Isso abrirá o Cypress; clique em 'E2E Testing'."
+"3 - Execute npm install."
 
-"4 - Selecione o navegador para realizar o teste(usei o Chrome)."
+"4 - Execute npx cypress open."
 
-"5 - Após isso, clique no único arquivo de teste chamado 'CartPage.cy.js'."
+"5 - Isso abrirá o Cypress; clique em 'E2E Testing'."
 
-"6 - Isso irá rodar todos os testes automatizados. Caso queira rodar um teste específico, adicione .only no it do teste."
+"6 - Selecione o navegador para realizar o teste(usei o Chrome)."
 
-"7 - O Cypress roda muito rapidamente, então talvez seja necessário acompanhar o processo passo a passo."
+"7 - Após isso, clique no único arquivo de teste chamado 'CartPage.cy.js'."
 
+"8 - Isso irá rodar todos os testes automatizados. Caso queira rodar um teste específico, adicione .only no it do teste."
+
+"9 - O Cypress roda muito rapidamente, então talvez seja necessário acompanhar o processo passo a passo."
 
 Agradecimentos:
 
