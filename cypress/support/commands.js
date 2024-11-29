@@ -36,3 +36,12 @@ Cypress.Commands.add("verifyOrderTotalAmount", (orderValue) => {
     .invoke("attr", "data-total-valor")
     .should("eq", orderValue.toString());
 });
+
+Cypress.Commands.add("failMessageCupom", (message) => {
+  cy.get('.alert').should("be.visible").contains(message)
+})
+
+Cypress.Commands.add("applyCouponCodeOnPopupCart", (couponCode) => {
+  cy.get('#usarCupom').type(couponCode)
+  cy.get('.btn').contains('Usar cupom').click()
+})
